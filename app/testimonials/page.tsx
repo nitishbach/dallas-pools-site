@@ -22,15 +22,6 @@ export default function Testimonials() {
         </div>
       </section>
 
-      {/* Disclaimer */}
-      <section className="px-6 py-8 bg-amber-50 border-b border-amber-200">
-        <div className="max-w-6xl mx-auto">
-          <p className="text-center text-amber-800 font-semibold">
-            NOTE: These are fake testimonials for demo/design purposes only.
-          </p>
-        </div>
-      </section>
-
       {/* Video Testimonials */}
       <section className="px-6 py-16 md:py-24 bg-white">
         <div className="max-w-6xl mx-auto">
@@ -127,7 +118,7 @@ export default function Testimonials() {
             Ready to join our happy customers?
           </h2>
           <p className="text-lg text-slate-700 mb-8">
-            Get a free quote and see why Dallas homeowners trust Gulf Breeze
+            Get a free quote and see why DFW homeowners trust Gulf Breeze
             Pool Service.
           </p>
           <a

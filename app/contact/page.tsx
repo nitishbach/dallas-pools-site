@@ -46,10 +46,10 @@ export default function Contact() {
                 Phone
               </h3>
               <a
-                href="tel:+14695550123"
+                href="tel:+19729511149"
                 className="text-sky-700 hover:text-sky-800 transition font-medium"
               >
-                (469) 555-0123
+                972-951-1149
               </a>
             </div>
             <div className="text-center">

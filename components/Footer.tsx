@@ -7,11 +7,11 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
             <Image
-              src="/logo.png"
+              src="/Logo1.png"
               alt="Gulf Breeze Pool Service"
               width={200}
               height={70}
-              className="h-14 w-auto mb-4 brightness-0 invert"
+              className="h-14 w-auto mb-4"
             />
             <p className="text-sm text-slate-400">
               Professional pool cleaning and maintenance services in Dallas, TX
@@ -26,10 +26,10 @@ export default function Footer() {
               </p>
               <p>
                 <a
-                  href="tel:+14695550123"
+                  href="tel:+19729511149"
                   className="hover:text-white transition"
                 >
-                  (469) 555-0123
+                  972-951-1149
                 </a>
               </p>
               <p>

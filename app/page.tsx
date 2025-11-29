@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import QuoteForm from "@/components/QuoteForm";
 import TestimonialCard from "@/components/TestimonialCard";
@@ -33,10 +34,10 @@ export default function Home() {
                   Request a Free Quote
                 </a>
                 <a
-                  href="tel:+14695550123"
+                  href="tel:+19729511149"
                   className="inline-flex items-center justify-center px-8 py-4 rounded-md border-2 border-sky-700 text-sky-700 font-semibold hover:bg-sky-50 transition text-lg"
                 >
-                  Call Now: (469) 555-0123
+                  Call Now: 972-951-1149
                 </a>
               </div>
               <div className="mt-6 text-sm text-slate-600">
@@ -44,12 +45,15 @@ export default function Home() {
                 Same-week availability · Satisfaction guaranteed
               </div>
             </div>
-            <div className="flex-1">
-              <div className="aspect-video rounded-2xl bg-gradient-to-br from-sky-200 to-teal-200 border border-sky-300 flex items-center justify-center text-slate-600 text-center px-6 shadow-lg">
-                <p className="text-lg font-medium">
-                  Pool photo / before-after gallery placeholder
-                </p>
-              </div>
+            <div className="flex-1 flex items-center justify-center">
+              <Image
+                src="/Logo1.png"
+                alt="Gulf Breeze Pool Service"
+                width={500}
+                height={300}
+                className="w-full h-auto max-w-lg"
+                priority
+              />
             </div>
           </div>
         </div>
@@ -65,7 +69,7 @@ export default function Home() {
             Everything you need to keep your pool clean, safe, and ready to
             enjoy.
           </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
                 title: "Weekly Pool Cleaning",
@@ -114,7 +118,7 @@ export default function Home() {
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-slate-900 text-center">
             Why Choose Us
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center">
               <div className="w-16 h-16 rounded-full bg-sky-100 flex items-center justify-center mx-auto mb-4">
                 <svg
@@ -221,24 +225,37 @@ export default function Home() {
           <p className="text-lg text-slate-700 mb-12 text-center">
             See the transformation we deliver
           </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               { caption: "Green to blue in 3 visits" },
               { caption: "Cloudy to crystal clear" },
               { caption: "Neglected pool restored" },
-            ].map((item, idx) => (
-              <div key={idx} className="space-y-2">
-                <div className="aspect-video rounded-lg bg-slate-200 border border-slate-300 flex items-center justify-center">
-                  <span className="text-slate-500 font-medium">Before</span>
+            ].map((item, idx) => {
+              const num = idx + 1;
+              return (
+                <div key={idx} className="space-y-2">
+                  <div className="aspect-video md:aspect-[4/3] lg:aspect-[16/9] rounded-lg border border-slate-300 overflow-hidden relative">
+                    <Image
+                      src={`/before${num}.jpg`}
+                      alt="Before"
+                      fill
+                      className="object-cover w-full h-full"
+                    />
+                  </div>
+                  <div className="aspect-video md:aspect-[4/3] lg:aspect-[16/9] rounded-lg border border-sky-300 overflow-hidden relative">
+                    <Image
+                      src={`/after${num}.jpg`}
+                      alt="After"
+                      fill
+                      className="object-cover w-full h-full"
+                    />
+                  </div>
+                  <p className="text-sm text-slate-600 text-center mt-2">
+                    {item.caption}
+                  </p>
                 </div>
-                <div className="aspect-video rounded-lg bg-sky-200 border border-sky-300 flex items-center justify-center">
-                  <span className="text-sky-700 font-medium">After</span>
-                </div>
-                <p className="text-sm text-slate-600 text-center mt-2">
-                  {item.caption}
-                </p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -246,15 +263,10 @@ export default function Home() {
       {/* 5. Testimonials Preview */}
       <section className="px-6 py-16 md:py-24 bg-slate-50">
         <div className="max-w-6xl mx-auto">
-          <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 mb-8 text-center">
-            <p className="text-sm text-amber-800 font-semibold">
-              NOTE: These are fake testimonials for demo/design purposes only.
-            </p>
-          </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-slate-900 text-center">
             What Our Customers Say
           </h2>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <TestimonialCard
               name="Sarah M."
               area="East Dallas"
@@ -302,6 +314,10 @@ export default function Home() {
               "Addison",
               "Carrollton",
               "Frisco",
+              "Flower Mound",
+              "Argyle",
+              "Highland Village",
+              "Southlake",
             ].map((city) => (
               <span
                 key={city}
@@ -320,7 +336,7 @@ export default function Home() {
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-slate-900 text-center">
             How It Works
           </h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
                 number: "1",
@@ -348,34 +364,6 @@ export default function Home() {
                 <p className="text-slate-700">{step.desc}</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 8. Pricing Context */}
-      <section className="px-6 py-16 md:py-24 bg-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-slate-900">
-            Transparent, Honest Pricing
-          </h2>
-          <div className="space-y-6 text-lg text-slate-700">
-            <p>
-              <span className="font-semibold">Weekly service</span> typically
-              starts around $80-120/week depending on pool size and condition.
-            </p>
-            <p>
-              <span className="font-semibold">One-time deep cleans</span>{" "}
-              usually range between $200-400 depending on the current state of
-              your pool.
-            </p>
-            <p>
-              <span className="font-semibold">Green-to-clean services</span>{" "}
-              vary based on severity, typically $300-600 for complete recovery.
-            </p>
-            <p className="mt-8 text-slate-600">
-              All pricing is confirmed after we inspect your pool. No hidden
-              fees, no surprises.
-            </p>
           </div>
         </div>
       </section>
