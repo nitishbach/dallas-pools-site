@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "About Us | Gulf Breeze Pool Service",
@@ -49,10 +50,14 @@ export default function About() {
                 </p>
               </div>
             </div>
-            <div className="aspect-square rounded-2xl bg-gradient-to-br from-sky-200 to-teal-200 border border-sky-300 flex items-center justify-center">
-              <p className="text-slate-600 text-center px-6 font-medium">
-                Owner/Team Photo Placeholder
-              </p>
+            <div className="flex items-center justify-center">
+              <Image
+                src="/Logo1.png"
+                alt="Gulf Breeze Pool Service"
+                width={400}
+                height={400}
+                className="w-full h-auto max-w-md"
+              />
             </div>
           </div>
         </div>

@@ -1,12 +1,23 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Navbar() {
   return (
     <nav className="bg-white border-b border-slate-200 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <Link href="/" className="text-2xl font-bold text-sky-700">
-            Gulf Breeze Pool Service
+          <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition">
+            <Image
+              src="/Logo1.png"
+              alt="Gulf Breeze Pool Service"
+              width={120}
+              height={72}
+              className="h-10 w-auto"
+              priority
+            />
+            <span className="text-2xl font-bold text-sky-700">
+              Gulf Breeze Pool Service
+            </span>
           </Link>
           <div className="flex items-center gap-6">
             <div className="hidden md:flex items-center gap-6">

@@ -18,6 +18,10 @@ export const metadata: Metadata = {
   title: "Gulf Breeze Pool Service | Dallas Pool Cleaning & Maintenance",
   description:
     "Professional pool cleaning and maintenance services in Dallas, TX. Weekly service, deep cleans, and equipment repair. Licensed & insured.",
+  icons: {
+    icon: "/logo.png",
+    apple: "/logo.png",
+  },
 };
 
 export default function RootLayout({
