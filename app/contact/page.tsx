@@ -4,7 +4,34 @@ import QuoteForm from "@/components/QuoteForm";
 export const metadata: Metadata = {
   title: "Contact Us | Gulf Breeze Pool Service",
   description:
-    "Get in touch with Gulf Breeze Pool Service. Call (469) 555-0123 or email info@gulfbreezepoolservice.com. We typically reply within 24 hours.",
+    "Get in touch with Gulf Breeze Pool Service. Call 972-951-1149. We typically reply within 24 hours.",
+  openGraph: {
+    title: "Contact Us | Gulf Breeze Pool Service",
+    description:
+      "Get in touch with Gulf Breeze Pool Service. Call 972-951-1149. We typically reply within 24 hours.",
+    url: "https://www.gulfbreezepoolsdfw.com/contact",
+    siteName: "Gulf Breeze Pool Service",
+    images: [
+      {
+        url: "/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Gulf Breeze Pool Service",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact Us | Gulf Breeze Pool Service",
+    description:
+      "Get in touch with Gulf Breeze Pool Service. Call 972-951-1149. We typically reply within 24 hours.",
+    images: ["/logo.png"],
+    creator: "@gulfbreeze.poolservice",
+  },
+  alternates: {
+    canonical: "https://www.gulfbreezepoolsdfw.com/contact",
+  },
 };
 
 export default function Contact() {

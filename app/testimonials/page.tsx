@@ -5,6 +5,33 @@ export const metadata: Metadata = {
   title: "Testimonials | Gulf Breeze Pool Service",
   description:
     "Read what our customers say about Gulf Breeze Pool Service. See how we've helped Dallas homeowners maintain crystal-clear pools.",
+  openGraph: {
+    title: "Testimonials | Gulf Breeze Pool Service",
+    description:
+      "Read what our customers say about Gulf Breeze Pool Service. See how we've helped Dallas homeowners maintain crystal-clear pools.",
+    url: "https://www.gulfbreezepoolsdfw.com/testimonials",
+    siteName: "Gulf Breeze Pool Service",
+    images: [
+      {
+        url: "/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Gulf Breeze Pool Service",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Testimonials | Gulf Breeze Pool Service",
+    description:
+      "Read what our customers say about Gulf Breeze Pool Service. See how we've helped Dallas homeowners maintain crystal-clear pools.",
+    images: ["/logo.png"],
+    creator: "@gulfbreeze.poolservice",
+  },
+  alternates: {
+    canonical: "https://www.gulfbreezepoolsdfw.com/testimonials",
+  },
 };
 
 export default function Testimonials() {

@@ -5,6 +5,33 @@ export const metadata: Metadata = {
   title: "About Us | Gulf Breeze Pool Service",
   description:
     "Learn about Gulf Breeze Pool Service - a local, family-owned Dallas pool company focused on reliability, communication, and quality service.",
+  openGraph: {
+    title: "About Us | Gulf Breeze Pool Service",
+    description:
+      "Learn about Gulf Breeze Pool Service - a local, family-owned Dallas pool company focused on reliability, communication, and quality service.",
+    url: "https://www.gulfbreezepoolsdfw.com/about",
+    siteName: "Gulf Breeze Pool Service",
+    images: [
+      {
+        url: "/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Gulf Breeze Pool Service",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Us | Gulf Breeze Pool Service",
+    description:
+      "Learn about Gulf Breeze Pool Service - a local, family-owned Dallas pool company focused on reliability, communication, and quality service.",
+    images: ["/logo.png"],
+    creator: "@gulfbreeze.poolservice",
+  },
+  alternates: {
+    canonical: "https://www.gulfbreezepoolsdfw.com/about",
+  },
 };
 
 export default function About() {

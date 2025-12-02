@@ -3,11 +3,40 @@ import Image from "next/image";
 import Link from "next/link";
 import QuoteForm from "@/components/QuoteForm";
 import TestimonialCard from "@/components/TestimonialCard";
+import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 
 export const metadata: Metadata = {
   title: "Gulf Breeze Pool Service | Crystal-Clear Pools in Dallas, TX",
   description:
     "Dallas homeowners trust Gulf Breeze Pool Service for fast, reliable pool cleaning and maintenance. Weekly service, deep cleans, and equipment repair.",
+  openGraph: {
+    title: "Gulf Breeze Pool Service | Crystal-Clear Pools in Dallas, TX",
+    description:
+      "Dallas homeowners trust Gulf Breeze Pool Service for fast, reliable pool cleaning and maintenance. Weekly service, deep cleans, and equipment repair.",
+    url: "https://www.gulfbreezepoolsdfw.com",
+    siteName: "Gulf Breeze Pool Service",
+    images: [
+      {
+        url: "/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Gulf Breeze Pool Service",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Gulf Breeze Pool Service | Crystal-Clear Pools in Dallas, TX",
+    description:
+      "Dallas homeowners trust Gulf Breeze Pool Service for fast, reliable pool cleaning and maintenance.",
+    images: ["/logo.png"],
+    creator: "@gulfbreeze.poolservice",
+  },
+  alternates: {
+    canonical: "https://www.gulfbreezepoolsdfw.com",
+  },
 };
 
 export default function Home() {
@@ -45,15 +74,16 @@ export default function Home() {
                 Same-week availability · Satisfaction guaranteed
               </div>
             </div>
-            <div className="flex-1 flex items-center justify-center">
-              <Image
-                src="/Logo1.png"
-                alt="Gulf Breeze Pool Service"
-                width={500}
-                height={300}
-                className="w-full h-auto max-w-lg"
-                priority
+            <div className="flex-1 flex flex-col items-center justify-center">
+              <BeforeAfterSlider
+                beforeImage="/before1.JPG"
+                afterImage="/after1.jpg"
+                beforeAlt="Pool before cleaning"
+                afterAlt="Pool after cleaning - crystal clear"
               />
+              <p className="mt-4 text-center text-slate-600 font-medium">
+                Green to Blue in 3 Visits
+              </p>
             </div>
           </div>
         </div>
@@ -227,16 +257,27 @@ export default function Home() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { caption: "Green to blue in 3 visits" },
-              { caption: "Cloudy to crystal clear" },
-              { caption: "Neglected pool restored" },
+              { 
+                caption: "Green to blue in 3 visits",
+                before: "/before1.JPG",
+                after: "/after1.jpg"
+              },
+              { 
+                caption: "Cloudy to crystal clear",
+                before: "/before2.jpg",
+                after: "/after2.jpg"
+              },
+              { 
+                caption: "Neglected pool restored",
+                before: "/before3.jpg",
+                after: "/after3.JPG"
+              },
             ].map((item, idx) => {
-              const num = idx + 1;
               return (
                 <div key={idx} className="space-y-2">
                   <div className="aspect-video md:aspect-[4/3] lg:aspect-[16/9] rounded-lg border border-slate-300 overflow-hidden relative">
                     <Image
-                      src={`/before${num}.jpg`}
+                      src={item.before}
                       alt="Before"
                       fill
                       className="object-cover w-full h-full"
@@ -244,7 +285,7 @@ export default function Home() {
                   </div>
                   <div className="aspect-video md:aspect-[4/3] lg:aspect-[16/9] rounded-lg border border-sky-300 overflow-hidden relative">
                     <Image
-                      src={`/after${num}.jpg`}
+                      src={item.after}
                       alt="After"
                       fill
                       className="object-cover w-full h-full"
@@ -302,7 +343,7 @@ export default function Home() {
           </h2>
           <p className="text-lg text-slate-700 mb-8">
             Proudly serving Dallas, Plano, Richardson, Garland, Mesquite,
-            Addison, and nearby areas.
+            Addison, Carrollton, Frisco, Flower Mound, Argyle, Highland Village, Southlake, and nearby areas.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             {[
@@ -450,6 +491,54 @@ export default function Home() {
           <QuoteForm />
         </div>
       </section>
+
+      {/* Structured Data for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            name: "Gulf Breeze Pool Service",
+            description:
+              "Professional pool cleaning and maintenance services in Dallas, TX. Weekly service, deep cleans, and equipment repair.",
+            url: "https://www.gulfbreezepoolsdfw.com",
+            telephone: "972-951-1149",
+            areaServed: [
+              "Dallas",
+              "Plano",
+              "Richardson",
+              "Garland",
+              "Mesquite",
+              "Addison",
+              "Carrollton",
+              "Frisco",
+              "Flower Mound",
+              "Argyle",
+              "Highland Village",
+              "Southlake",
+              "Lewisville",
+            ],
+            serviceType: [
+              "Pool Cleaning",
+              "Pool Maintenance",
+              "Pool Service",
+              "Pool Equipment Repair",
+              "Pool Deep Cleaning",
+              "Pool Opening",
+            ],
+            priceRange: "$$",
+            image: "https://www.gulfbreezepoolsdfw.com/logo.png",
+            sameAs: ["https://www.instagram.com/gulfbreeze.poolservice"],
+            address: {
+              "@type": "PostalAddress",
+              addressLocality: "Dallas",
+              addressRegion: "TX",
+              addressCountry: "US",
+            },
+          }),
+        }}
+      />
     </main>
   );
 }
