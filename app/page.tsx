@@ -74,13 +74,16 @@ export default function Home() {
                 Same-week availability · Satisfaction guaranteed
               </div>
             </div>
-            <div className="flex-1 flex items-center justify-center">
+            <div className="flex-1 flex flex-col items-center justify-center">
               <BeforeAfterSlider
                 beforeImage="/before1.JPG"
                 afterImage="/after1.jpg"
                 beforeAlt="Pool before cleaning"
                 afterAlt="Pool after cleaning - crystal clear"
               />
+              <p className="mt-4 text-center text-slate-600 font-medium">
+                Green to Blue in 3 Visits
+              </p>
             </div>
           </div>
         </div>
