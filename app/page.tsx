@@ -70,7 +70,7 @@ export default function Home() {
                 </a>
               </div>
               <div className="mt-6 text-sm text-slate-600">
-                <span className="font-semibold">Licensed & insured</span> ·
+                <span className="font-semibold">CPO Certified</span> · Licensed & insured ·
                 Same-week availability · Satisfaction guaranteed
               </div>
             </div>
