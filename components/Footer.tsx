@@ -13,9 +13,12 @@ export default function Footer() {
               height={70}
               className="h-14 w-auto mb-4"
             />
-            <p className="text-sm text-slate-400">
+            <p className="text-sm text-slate-400 mb-2">
               Professional pool cleaning and maintenance services in Dallas, TX
               and surrounding areas.
+            </p>
+            <p className="text-sm text-slate-400">
+              <span className="font-semibold text-slate-300">CPO Certified</span>
             </p>
           </div>
           <div>
@@ -39,6 +42,9 @@ export default function Footer() {
                 >
                   info@gulfbreezepoolservice.com
                 </a>
+              </p>
+              <p>
+                <span className="text-slate-400">Hours:</span> Mon to Fri : 9 AM to 5 PM
               </p>
             </div>
           </div>

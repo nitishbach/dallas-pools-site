@@ -119,7 +119,7 @@ export default function About() {
               },
               {
                 title: "Safety",
-                desc: "We're fully licensed and insured. Your pool and property are protected, and we follow all safety protocols.",
+                desc: "We're fully licensed, insured, and CPO certified. Your pool and property are protected, and we follow all safety protocols.",
                 icon: (
                   <svg
                     className="w-8 h-8"
