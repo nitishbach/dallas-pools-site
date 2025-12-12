@@ -122,6 +122,7 @@ export default function Home() {
                       alt="Before"
                       fill
                       className="object-cover w-full h-full"
+                      unoptimized={item.before === "/before3.jpg"}
                     />
                   </div>
                   <div className="aspect-video md:aspect-[4/3] lg:aspect-[16/9] rounded-lg border border-sky-300 overflow-hidden relative">
