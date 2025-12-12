@@ -45,7 +45,7 @@ export default function Home() {
       {/* 1. Hero Section */}
       <section className="px-6 py-16 md:py-24 bg-gradient-to-b from-sky-50 to-white">
         <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col md:flex-row md:items-center gap-12">
+          <div className="text-center md:text-left">
             <div className="flex-1">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-slate-900">
                 Crystal-clear pools,{" "}
@@ -71,25 +71,70 @@ export default function Home() {
               </div>
               <div className="mt-6 text-sm text-slate-600">
                 <span className="font-semibold">Licensed & insured</span> ·
+                <span className="font-semibold"> CPO Certified</span> ·
                 Same-week availability · Satisfaction guaranteed
               </div>
-            </div>
-            <div className="flex-1 flex flex-col items-center justify-center">
-              <BeforeAfterSlider
-                beforeImage="/before1.JPG"
-                afterImage="/after1.jpg"
-                beforeAlt="Pool before cleaning"
-                afterAlt="Pool after cleaning - crystal clear"
-              />
-              <p className="mt-4 text-center text-slate-600 font-medium">
-                Green to Blue in 3 Visits
-              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 2. Services Section */}
+      {/* 2. Before/After Section */}
+      <section className="px-6 py-16 md:py-24 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900 text-center">
+            Before & After
+          </h2>
+          <p className="text-lg text-slate-700 mb-12 text-center">
+            See the Transformation We Deliver
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { 
+                caption: "Green to blue in 3 visits",
+                before: "/before1.JPG",
+                after: "/after1.jpg"
+              },
+              { 
+                caption: "Cloudy to crystal clear",
+                before: "/before2.jpg",
+                after: "/after2.jpg"
+              },
+              { 
+                caption: "Neglected pool restored",
+                before: "/before3.jpg",
+                after: "/after3.JPG"
+              },
+            ].map((item, idx) => {
+              return (
+                <div key={idx} className="space-y-2">
+                  <div className="aspect-video md:aspect-[4/3] lg:aspect-[16/9] rounded-lg border border-slate-300 overflow-hidden relative">
+                    <Image
+                      src={item.before}
+                      alt="Before"
+                      fill
+                      className="object-cover w-full h-full"
+                    />
+                  </div>
+                  <div className="aspect-video md:aspect-[4/3] lg:aspect-[16/9] rounded-lg border border-sky-300 overflow-hidden relative">
+                    <Image
+                      src={item.after}
+                      alt="After"
+                      fill
+                      className="object-cover w-full h-full"
+                    />
+                  </div>
+                  <p className="text-sm text-slate-600 text-center mt-2">
+                    {item.caption}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* 3. Services Section */}
       <section id="services" className="px-6 py-16 md:py-24 bg-white">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900">
@@ -142,7 +187,41 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. Why Choose Us - Value Equation */}
+      {/* 4. Testimonials Preview */}
+      <section className="px-6 py-16 md:py-24 bg-slate-50">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-slate-900 text-center">
+            What Our Customers Say
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <TestimonialCard
+              name="Sarah M. (placeholder)"
+              area="East Dallas"
+              quote="My pool has never looked this good. Super reliable and always on time. I don't have to think about pool maintenance anymore."
+            />
+            <TestimonialCard
+              name="Michael R. (placeholder)"
+              area="Plano"
+              quote="Fast response, fair pricing, and they explained everything clearly. Highly recommend for busy families."
+            />
+            <TestimonialCard
+              name="Priya K. (placeholder)"
+              area="Richardson"
+              quote="They took a green mess and made it crystal clear in a couple of visits. Professional and trustworthy."
+            />
+          </div>
+          <div className="text-center mt-8">
+            <Link
+              href="/testimonials"
+              className="text-sky-700 font-semibold hover:text-sky-800 transition"
+            >
+              View all testimonials →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. Why Choose Us - Value Equation */}
       <section className="px-6 py-16 md:py-24 bg-sky-50">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-slate-900 text-center">
@@ -161,7 +240,7 @@ export default function Home() {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth={2}
-                    d="M5 13l4 4L19 7"
+                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
                   />
                 </svg>
               </div>
@@ -207,7 +286,7 @@ export default function Home() {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth={2}
-                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11"
                   />
                 </svg>
               </div>
@@ -246,106 +325,17 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. Before/After Section */}
+      {/* 6. Service Areas */}
       <section className="px-6 py-16 md:py-24 bg-white">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900 text-center">
-            Before & After
-          </h2>
-          <p className="text-lg text-slate-700 mb-12 text-center">
-            See the transformation we deliver
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { 
-                caption: "Green to blue in 3 visits",
-                before: "/before1.JPG",
-                after: "/after1.jpg"
-              },
-              { 
-                caption: "Cloudy to crystal clear",
-                before: "/before2.jpg",
-                after: "/after2.jpg"
-              },
-              { 
-                caption: "Neglected pool restored",
-                before: "/before3.jpg",
-                after: "/after3.JPG"
-              },
-            ].map((item, idx) => {
-              return (
-                <div key={idx} className="space-y-2">
-                  <div className="aspect-video md:aspect-[4/3] lg:aspect-[16/9] rounded-lg border border-slate-300 overflow-hidden relative">
-                    <Image
-                      src={item.before}
-                      alt="Before"
-                      fill
-                      className="object-cover w-full h-full"
-                    />
-                  </div>
-                  <div className="aspect-video md:aspect-[4/3] lg:aspect-[16/9] rounded-lg border border-sky-300 overflow-hidden relative">
-                    <Image
-                      src={item.after}
-                      alt="After"
-                      fill
-                      className="object-cover w-full h-full"
-                    />
-                  </div>
-                  <p className="text-sm text-slate-600 text-center mt-2">
-                    {item.caption}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* 5. Testimonials Preview */}
-      <section className="px-6 py-16 md:py-24 bg-slate-50">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-slate-900 text-center">
-            What Our Customers Say
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <TestimonialCard
-              name="Sarah M."
-              area="East Dallas"
-              quote="My pool has never looked this good. Super reliable and always on time. I don't have to think about pool maintenance anymore."
-            />
-            <TestimonialCard
-              name="Michael R."
-              area="Plano"
-              quote="Fast response, fair pricing, and they explained everything clearly. Highly recommend for busy families."
-            />
-            <TestimonialCard
-              name="Priya K."
-              area="Richardson"
-              quote="They took a green mess and made it crystal clear in a couple of visits. Professional and trustworthy."
-            />
-          </div>
-          <div className="text-center mt-8">
-            <Link
-              href="/testimonials"
-              className="text-sky-700 font-semibold hover:text-sky-800 transition"
-            >
-              View all testimonials →
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* 6. Service Areas */}
-      <section className="px-6 py-16 md:py-24 bg-white">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900">
             Service Areas
           </h2>
-          <p className="text-lg text-slate-700 mb-8">
+          <p className="text-lg text-slate-700 mb-8 text-center">
             Proudly serving Dallas, Plano, Richardson, Garland, Mesquite,
             Addison, Carrollton, Frisco, Flower Mound, Argyle, Highland Village, Southlake, and nearby areas.
           </p>
-          <div className="flex flex-wrap justify-center gap-3">
+          <div className="flex flex-wrap justify-center gap-3 mb-12">
             {[
               "Dallas",
               "Plano",
@@ -367,6 +357,68 @@ export default function Home() {
                 {city}
               </span>
             ))}
+          </div>
+
+          {/* Location and Business Info */}
+          <div className="grid md:grid-cols-2 gap-8 items-start">
+            {/* Google Maps */}
+            <div className="w-full aspect-video rounded-lg overflow-hidden border border-slate-200">
+              <iframe
+                src="https://www.google.com/maps?q=2413+Timber+Ridge+Lane,+Flower+Mound,+TX+75028&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen={true}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Gulf Breeze Pool Service Location"
+                className="w-full h-full"
+              />
+            </div>
+
+            {/* Business Info */}
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-xl font-bold text-slate-900 mb-3">
+                  Visit Us
+                </h3>
+                <p className="text-slate-700">
+                  2413 Timber Ridge Lane<br />
+                  Flower Mound, TX 75028
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-bold text-slate-900 mb-3">
+                  Business Hours
+                </h3>
+                <p className="text-slate-700">
+                  Monday - Friday: 9:00 AM - 5:00 PM
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-bold text-slate-900 mb-3">
+                  Certifications
+                </h3>
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-sky-100 rounded-md">
+                  <svg
+                    className="w-5 h-5 text-sky-700"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                  <span className="text-sky-700 font-semibold">CPO Certified</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -532,10 +584,13 @@ export default function Home() {
             sameAs: ["https://www.instagram.com/gulfbreeze.poolservice"],
             address: {
               "@type": "PostalAddress",
-              addressLocality: "Dallas",
+              streetAddress: "2413 Timber Ridge Lane",
+              addressLocality: "Flower Mound",
               addressRegion: "TX",
+              postalCode: "75028",
               addressCountry: "US",
             },
+            openingHours: "Mo-Fr 09:00-17:00",
           }),
         }}
       />

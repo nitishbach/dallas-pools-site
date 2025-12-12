@@ -90,47 +90,47 @@ export default function Testimonials() {
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <TestimonialCard
-              name="Sarah M."
+              name="Sarah M. (placeholder)"
               area="East Dallas"
               quote="My pool has never looked this good. Super reliable and always on time. I don't have to think about pool maintenance anymore. Gulf Breeze has been a game-changer for our family."
             />
             <TestimonialCard
-              name="Michael R."
+              name="Michael R. (placeholder)"
               area="Plano"
               quote="Fast response, fair pricing, and they explained everything clearly. Highly recommend for busy families. The team is professional and trustworthy."
             />
             <TestimonialCard
-              name="Priya K."
+              name="Priya K. (placeholder)"
               area="Richardson"
               quote="They took a green mess and made it crystal clear in a couple of visits. Professional and trustworthy. I'm so glad we found them."
             />
             <TestimonialCard
-              name="David L."
+              name="David L. (placeholder)"
               area="Garland"
               quote="Best pool service we've ever had. They're consistent, thorough, and always leave our pool looking perfect. Worth every penny."
             />
             <TestimonialCard
-              name="Jennifer W."
+              name="Jennifer W. (placeholder)"
               area="Addison"
               quote="I love that I don't have to worry about pool chemicals or maintenance anymore. They handle everything and communicate clearly about what they're doing."
             />
             <TestimonialCard
-              name="Robert T."
+              name="Robert T. (placeholder)"
               area="Mesquite"
               quote="After trying several pool services, we finally found one we can rely on. Gulf Breeze is professional, responsive, and does excellent work."
             />
             <TestimonialCard
-              name="Amanda S."
+              name="Amanda S. (placeholder)"
               area="Carrollton"
               quote="The team is friendly, professional, and always on time. Our pool has never been cleaner. Highly recommend to anyone in the Dallas area."
             />
             <TestimonialCard
-              name="James P."
+              name="James P. (placeholder)"
               area="Frisco"
               quote="Great service, fair prices, and they actually care about doing a good job. We've been with them for over a year and couldn't be happier."
             />
             <TestimonialCard
-              name="Lisa H."
+              name="Lisa H. (placeholder)"
               area="Dallas"
               quote="They saved our pool after we neglected it for months. Green to blue in just a few visits. Now we have weekly service and couldn't be happier."
             />
