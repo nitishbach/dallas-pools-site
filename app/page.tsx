@@ -45,8 +45,8 @@ export default function Home() {
       {/* 1. Hero Section */}
       <section className="px-6 py-16 md:py-24 bg-gradient-to-b from-sky-50 to-white">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center md:text-left">
-            <div className="flex-1">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-slate-900">
                 Crystal-clear pools,{" "}
                 <span className="text-sky-700">all season long.</span>
@@ -74,6 +74,14 @@ export default function Home() {
                 <span className="font-semibold"> CPO Certified</span> ·
                 Same-week availability · Satisfaction guaranteed
               </div>
+            </div>
+            <div className="mt-8 md:mt-0">
+              <BeforeAfterSlider
+                beforeImage="/before1.JPG"
+                afterImage="/after1.jpg"
+                beforeAlt="Pool before service"
+                afterAlt="Pool after service"
+              />
             </div>
           </div>
         </div>
